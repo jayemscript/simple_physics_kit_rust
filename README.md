@@ -23,8 +23,8 @@ Features are implemented incrementally according to the development roadmap.
 Clone the repository:
 
 ```bash
-git clone https://github.com/jayemscript/simple-physics-kit-rust.git
-cd simple-physics-kit-rust
+git clone https://github.com/jayemscript/simple_physics_kit_rust.git
+cd simple_physics_kit_rust
 ```
 
 Build the library:
