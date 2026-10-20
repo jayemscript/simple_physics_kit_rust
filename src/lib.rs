@@ -6,28 +6,31 @@
 //!
 //! ## Available Modules
 //!
-//! - `free_fall` - Free-fall physics calculations.
+//! - `free_fall` - Free-fall calculations.
+//! - `velocity` - One-dimensional velocity calculations.
 //!
 //! ## Example
 //!
 //! ```
-//! use simple_physics_kit_rust::free_fall::{
-//!     time_to_ground,
-//!     impact_velocity,
-//! };
+//! use simple_physics_kit_rust::velocity::average_velocity;
 //!
-//! let time = time_to_ground(45.0, 9.8).unwrap();
-//! let velocity = impact_velocity(45.0, 9.8).unwrap();
+//! let result = average_velocity(100.0, 5.0).unwrap();
 //!
-//! assert!((time - 3.03).abs() < 0.01);
-//! assert!((velocity - 29.70).abs() < 0.01);
+//! assert_eq!(result, 20.0);
 //! ```
 
-// Public modules
 pub mod free_fall;
+pub mod velocity;
 
-// Re-export public functions for convenient access
+// Re-export free-fall functions.
 pub use free_fall::{
-    time_to_ground,
     impact_velocity,
+    time_to_ground,
+};
+
+// Re-export velocity functions.
+pub use velocity::{
+    average_velocity,
+    displacement,
+    final_velocity,
 };
