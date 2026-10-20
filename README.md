@@ -23,7 +23,7 @@ Features are implemented incrementally according to the development roadmap.
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/simple-physics-kit-rust.git
+git clone https://github.com/jayemscript/simple-physics-kit-rust.git
 cd simple-physics-kit-rust
 ```
 
