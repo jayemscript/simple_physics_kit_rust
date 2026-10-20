@@ -8,29 +8,29 @@
 //!
 //! - `free_fall` - Free-fall calculations.
 //! - `velocity` - One-dimensional velocity calculations.
-//!
-//! ## Example
-//!
-//! ```
-//! use simple_physics_kit_rust::velocity::average_velocity;
-//!
-//! let result = average_velocity(100.0, 5.0).unwrap();
-//!
-//! assert_eq!(result, 20.0);
-//! ```
+//! - `projectile_motion` - Horizontal projectile motion.
 
 pub mod free_fall;
 pub mod velocity;
+pub mod projectile_motion;
 
-// Re-export free-fall functions.
+// Free fall
 pub use free_fall::{
     impact_velocity,
     time_to_ground,
 };
 
-// Re-export velocity functions.
+// Velocity
 pub use velocity::{
     average_velocity,
     displacement,
     final_velocity,
+};
+
+// Projectile motion
+pub use projectile_motion::{
+    final_speed,
+    final_vertical_velocity,
+    horizontal_distance,
+    time_of_flight,
 };
