@@ -2,5 +2,10 @@
 name = "simple_physics_kit_rust"
 version = "0.1.0"
 edition = "2024"
+description = "A lightweight physics calculation library written in Rust"
+license = "MIT"
+readme = "README.md"
+keywords = ["physics", "kinematics", "mechanics", "simulation"]
+categories = ["science", "simulation"]
 
 [dependencies]
