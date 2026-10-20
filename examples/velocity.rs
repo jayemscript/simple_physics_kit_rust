@@ -1,8 +1,4 @@
-use simple_physics_kit_rust::velocity::{
-    average_velocity,
-    final_velocity,
-    displacement,
-};
+use simple_physics_kit_rust::velocity::{average_velocity, displacement, final_velocity};
 
 fn main() -> Result<(), &'static str> {
     println!("=== Simple Physics Kit: Velocity ===");

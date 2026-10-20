@@ -1,36 +1,35 @@
 //! # Simple Physics Kit
 //!
-//! A lightweight physics calculation library written in Rust.
+//! A lightweight, dependency-free physics calculation
+//! library written in Rust.
 //!
-//! Uses only the Rust standard library.
+//! ## Modules
 //!
-//! ## Available Modules
+//! - `free_fall`: Free-fall physics
+//! - `velocity`: One-dimensional velocity
+//! - `projectile_motion`: Horizontal projectile motion
+//! - `acceleration`: One-dimensional acceleration
 //!
-//! - `free_fall` - Free-fall calculations.
-//! - `velocity` - One-dimensional velocity calculations.
-//! - `projectile_motion` - Horizontal projectile motion.
+//! All calculations use SI units.
 
+pub mod acceleration;
 pub mod free_fall;
-pub mod velocity;
 pub mod projectile_motion;
+pub mod velocity;
 
-// Free fall
-pub use free_fall::{
-    impact_velocity,
-    time_to_ground,
-};
+// Free fall API
+pub use free_fall::{impact_velocity, time_to_ground};
 
-// Velocity
-pub use velocity::{
-    average_velocity,
-    displacement,
-    final_velocity,
-};
+// Velocity API
+pub use velocity::{average_velocity, displacement, final_velocity};
 
-// Projectile motion
+// Projectile motion API
 pub use projectile_motion::{
-    final_speed,
-    final_vertical_velocity,
-    horizontal_distance,
-    time_of_flight,
+    final_speed, final_vertical_velocity, horizontal_distance, time_of_flight,
+};
+
+// Acceleration API
+pub use acceleration::{
+    average_acceleration, displacement as accelerated_displacement,
+    final_velocity as accelerated_final_velocity,
 };

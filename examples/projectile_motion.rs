@@ -1,8 +1,5 @@
 use simple_physics_kit_rust::projectile_motion::{
-    time_of_flight,
-    horizontal_distance,
-    final_vertical_velocity,
-    final_speed,
+    final_speed, final_vertical_velocity, horizontal_distance, time_of_flight,
 };
 
 fn main() -> Result<(), &'static str> {
@@ -14,22 +11,11 @@ fn main() -> Result<(), &'static str> {
 
     let time = time_of_flight(height, gravity)?;
 
-    let distance = horizontal_distance(
-        height,
-        horizontal_velocity,
-        gravity,
-    )?;
+    let distance = horizontal_distance(height, horizontal_velocity, gravity)?;
 
-    let vertical = final_vertical_velocity(
-        height,
-        gravity,
-    )?;
+    let vertical = final_vertical_velocity(height, gravity)?;
 
-    let speed = final_speed(
-        height,
-        horizontal_velocity,
-        gravity,
-    )?;
+    let speed = final_speed(height, horizontal_velocity, gravity)?;
 
     println!("Time of flight: {:.2} seconds", time);
     println!("Horizontal distance: {:.2} meters", distance);

@@ -17,10 +17,7 @@ use crate::free_fall;
 /// Calculates the time of flight for a horizontal launch.
 ///
 /// Returns time in seconds.
-pub fn time_of_flight(
-    height: f64,
-    gravity: f64,
-) -> Result<f64, &'static str> {
+pub fn time_of_flight(height: f64, gravity: f64) -> Result<f64, &'static str> {
     let time = free_fall::time_to_ground(height, gravity)?;
 
     if !time.is_finite() {
@@ -60,10 +57,7 @@ pub fn horizontal_distance(
 /// Downward is considered positive.
 ///
 /// Returns velocity in m/s.
-pub fn final_vertical_velocity(
-    height: f64,
-    gravity: f64,
-) -> Result<f64, &'static str> {
+pub fn final_vertical_velocity(height: f64, gravity: f64) -> Result<f64, &'static str> {
     let time = time_of_flight(height, gravity)?;
     let velocity = gravity * time;
 
@@ -143,24 +137,19 @@ mod tests {
 
     #[test]
     fn test_nan_velocity() {
-        assert!(
-            horizontal_distance(60.0, f64::NAN, 9.8).is_err()
-        );
+        assert!(horizontal_distance(60.0, f64::NAN, 9.8).is_err());
     }
 
     #[test]
     fn test_negative_horizontal_velocity() {
-        let result =
-            horizontal_distance(60.0, -15.0, 9.8).unwrap();
+        let result = horizontal_distance(60.0, -15.0, 9.8).unwrap();
 
         assert!((result + 52.4891).abs() < 0.001);
     }
 
     #[test]
     fn test_infinite_input() {
-        assert!(
-            final_speed(60.0, f64::INFINITY, 9.8).is_err()
-        );
+        assert!(final_speed(60.0, f64::INFINITY, 9.8).is_err());
     }
 
     #[test]

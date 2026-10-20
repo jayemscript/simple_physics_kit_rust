@@ -1,7 +1,4 @@
-use simple_physics_kit_rust::free_fall::{
-    time_to_ground,
-    impact_velocity,
-};
+use simple_physics_kit_rust::free_fall::{impact_velocity, time_to_ground};
 
 fn main() {
     let time = time_to_ground(45.0, 9.8).unwrap();

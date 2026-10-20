@@ -9,10 +9,7 @@
 /// time: seconds
 ///
 /// Returns velocity in m/s.
-pub fn average_velocity(
-    displacement: f64,
-    time: f64,
-) -> Result<f64, &'static str> {
+pub fn average_velocity(displacement: f64, time: f64) -> Result<f64, &'static str> {
     if !displacement.is_finite() {
         return Err("Displacement must be finite");
     }
@@ -42,10 +39,7 @@ pub fn final_velocity(
     acceleration: f64,
     time: f64,
 ) -> Result<f64, &'static str> {
-    if !initial_velocity.is_finite()
-        || !acceleration.is_finite()
-        || !time.is_finite()
-    {
+    if !initial_velocity.is_finite() || !acceleration.is_finite() || !time.is_finite() {
         return Err("Inputs must be finite numbers");
     }
 
@@ -68,10 +62,7 @@ pub fn final_velocity(
 /// time: seconds
 ///
 /// Returns displacement in meters.
-pub fn displacement(
-    velocity: f64,
-    time: f64,
-) -> Result<f64, &'static str> {
+pub fn displacement(velocity: f64, time: f64) -> Result<f64, &'static str> {
     if !velocity.is_finite() || !time.is_finite() {
         return Err("Inputs must be finite numbers");
     }
